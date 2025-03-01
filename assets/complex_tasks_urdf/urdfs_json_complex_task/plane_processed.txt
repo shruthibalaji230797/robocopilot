@@ -1,0 +1,104 @@
+{
+  "robot_name": "plane",
+  "materials": [
+    {
+      "name": "white",
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "links": [
+    {
+      "name": "planeLink",
+      "contact": {
+        "lateral_friction": 1.0
+      },
+      "inertial": {
+        "origin": {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "mass": 0.0,
+        "inertia": {
+          "ixx": 0.0,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.0,
+          "iyz": 0.0,
+          "izz": 0.0
+        }
+      },
+      "visual": [
+        {
+          "origin": {
+            "xyz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "plane100.obj",
+            "scale": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "material": {
+            "name": "white",
+            "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        }
+      ],
+      "collision": [
+        {
+          "origin": {
+            "xyz": [
+              0.0,
+              0.0,
+              -5.0
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "box",
+            "size": [
+              200.0,
+              200.0,
+              10.0
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "joints": []
+}

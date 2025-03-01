@@ -1,0 +1,108 @@
+{
+  "robot_name": "tray",
+  "materials": [
+    {
+      "name": "tray_material",
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "links": [
+    {
+      "name": "tray_base_link",
+      "contact": {
+        "lateral_friction": 0.5,
+        "rolling_friction": 0.0,
+        "contact_cfm": 0.0,
+        "contact_erp": 1.0
+      },
+      "inertial": {
+        "origin": {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "mass": 0.0,
+        "inertia": {
+          "ixx": 0.0,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 0.0,
+          "iyz": 0.0,
+          "izz": 0.0
+        }
+      },
+      "visual": [
+        {
+          "origin": {
+            "xyz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "tray_textured4.obj",
+            "scale": [
+              0.5,
+              0.5,
+              0.5
+            ]
+          },
+          "material": {
+            "name": "tray_material",
+            "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        }
+      ],
+      "collision": [
+        {
+          "origin": {
+            "xyz": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "tray_textured4.obj",
+            "scale": [
+              0.5,
+              0.5,
+              0.5
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "joints": []
+}

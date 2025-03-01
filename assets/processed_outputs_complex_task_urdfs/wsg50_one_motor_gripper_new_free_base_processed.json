@@ -1,0 +1,834 @@
+{
+  "file_type": "SDF",
+  "name": "wsg50_one_motor_gripper_new_free_base",
+  "version": "1.6",
+  "content": {
+    "attributes": {
+      "version": "1.6"
+    },
+    "world": {
+      "attributes": {
+        "name": "default"
+      },
+      "model": {
+        "attributes": {
+          "name": "wsg50_with_gripper"
+        },
+        "pose": {
+          "value": "1.4 -0.2 2.1 0 0 0"
+        },
+        "link": [
+          {
+            "attributes": {
+              "name": "world"
+            },
+            "pose": {
+              "value": "0 0 0 0 0 0"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0 0 0 0"
+              },
+              "mass": {
+                "value": "0.1"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "1"
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "base_link"
+            },
+            "pose": {
+              "value": "0 0 0 0 0 0"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0 0 0 0"
+              },
+              "mass": {
+                "value": "1.2"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "1"
+                }
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "base_link_visual"
+              },
+              "pose": {
+                "value": "0 0 0 0 -0 0"
+              },
+              "geometry": {
+                "mesh": {
+                  "scale": {
+                    "value": "1 1 1"
+                  },
+                  "uri": {
+                    "value": "meshes/WSG50_110.stl"
+                  }
+                }
+              },
+              "material": {}
+            }
+          },
+          {
+            "attributes": {
+              "name": "motor"
+            },
+            "pose": {
+              "value": "0 0 0.03 0 0 0"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0 0 0 0"
+              },
+              "mass": {
+                "value": "0.1"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "motor_visual"
+              },
+              "pose": {
+                "value": "0 0 0.01 0 0 0"
+              },
+              "geometry": {
+                "box": {
+                  "size": {
+                    "value": "0.02 0.02 0.02"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "left_hinge"
+            },
+            "pose": {
+              "value": "0 0 0.04 0 0 0"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0.035 0 0 0"
+              },
+              "mass": {
+                "value": "0.1"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "motor_visual"
+              },
+              "pose": {
+                "value": "-0.03 0 0.01 0 -1.2 0"
+              },
+              "geometry": {
+                "box": {
+                  "size": {
+                    "value": "0.02 0.02 0.07"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "right_hinge"
+            },
+            "pose": {
+              "value": "0 0 0.04 0 0 0"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0.035 0 0 0"
+              },
+              "mass": {
+                "value": "0.1"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "motor_visual"
+              },
+              "pose": {
+                "value": "0.03 0 0.01 0 1.2 0"
+              },
+              "geometry": {
+                "box": {
+                  "size": {
+                    "value": "0.02 0.02 0.07"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "gripper_left"
+            },
+            "pose": {
+              "value": "-0.055 0 0.06 0 -0 0"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0.0115 0 -0 0"
+              },
+              "mass": {
+                "value": "0.2"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "visual": [
+              {
+                "attributes": {
+                  "name": "gripper_left_visual"
+                },
+                "pose": {
+                  "value": "0 0 -0.06 0 0 0"
+                },
+                "geometry": {
+                  "mesh": {
+                    "scale": {
+                      "value": "0.001 0.001 0.001"
+                    },
+                    "uri": {
+                      "value": "meshes/GUIDE_WSG50_110.stl"
+                    }
+                  }
+                }
+              },
+              {
+                "attributes": {
+                  "name": "gripper_left_fixed_joint_lump__finger_left_visual_1"
+                },
+                "pose": {
+                  "value": "0 0 -0.037 0 0 0"
+                },
+                "geometry": {
+                  "mesh": {
+                    "scale": {
+                      "value": "0.001 0.001 0.001"
+                    },
+                    "uri": {
+                      "value": "meshes/WSG-FMF.stl"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "attributes": {
+              "name": "gripper_right"
+            },
+            "pose": {
+              "value": "0.055 0 0.06 0 0 3.14159"
+            },
+            "inertial": {
+              "pose": {
+                "value": "0 0 0.0115 0 -0 0"
+              },
+              "mass": {
+                "value": "0.2"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "visual": [
+              {
+                "attributes": {
+                  "name": "gripper_right_visual"
+                },
+                "pose": {
+                  "value": "0 0 -0.06 0 0 0"
+                },
+                "geometry": {
+                  "mesh": {
+                    "scale": {
+                      "value": "0.001 0.001 0.001"
+                    },
+                    "uri": {
+                      "value": "meshes/GUIDE_WSG50_110.stl"
+                    }
+                  }
+                }
+              },
+              {
+                "attributes": {
+                  "name": "gripper_right_fixed_joint_lump__finger_right_visual_1"
+                },
+                "pose": {
+                  "value": "0 0 -0.037 0 0 0"
+                },
+                "geometry": {
+                  "mesh": {
+                    "scale": {
+                      "value": "0.001 0.001 0.001"
+                    },
+                    "uri": {
+                      "value": "meshes/WSG-FMF.stl"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "attributes": {
+              "name": "finger_right"
+            },
+            "contact": {
+              "lateral_friction": {
+                "value": "1.0"
+              },
+              "spinning_friction": {
+                "value": "1.5"
+              }
+            },
+            "pose": {
+              "value": "0.062 0 0.145 0 0 1.5708"
+            },
+            "inertial": {
+              "mass": {
+                "value": "0.2"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "collision": {
+              "attributes": {
+                "name": "finger_right_collision"
+              },
+              "pose": {
+                "value": "0 0 0.042 0 0 0"
+              },
+              "geometry": {
+                "box": {
+                  "size": {
+                    "value": "0.02 0.02 0.15"
+                  }
+                }
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "finger_right_visual"
+              },
+              "pose": {
+                "value": "0 0 0 0 0 0"
+              },
+              "geometry": {
+                "mesh": {
+                  "scale": {
+                    "value": "1 1 1"
+                  },
+                  "uri": {
+                    "value": "meshes/l_gripper_tip_scaled.stl"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "finger_left"
+            },
+            "contact": {
+              "lateral_friction": {
+                "value": "1.0"
+              },
+              "spinning_friction": {
+                "value": "1.5"
+              }
+            },
+            "pose": {
+              "value": "-0.062 0 0.145 0 0 4.71239"
+            },
+            "inertial": {
+              "mass": {
+                "value": "0.2"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.1"
+                },
+                "ixy": {
+                  "value": "0"
+                },
+                "ixz": {
+                  "value": "0"
+                },
+                "iyy": {
+                  "value": "0.1"
+                },
+                "iyz": {
+                  "value": "0"
+                },
+                "izz": {
+                  "value": "0.1"
+                }
+              }
+            },
+            "collision": {
+              "attributes": {
+                "name": "finger_left_collision"
+              },
+              "pose": {
+                "value": "0 0 0.042 0 0 0"
+              },
+              "geometry": {
+                "box": {
+                  "size": {
+                    "value": "0.02 0.02 0.15"
+                  }
+                }
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "finger_left_visual"
+              },
+              "pose": {
+                "value": "0 0 0 0 0 0"
+              },
+              "geometry": {
+                "mesh": {
+                  "scale": {
+                    "value": "1 1 1"
+                  },
+                  "uri": {
+                    "value": "meshes/l_gripper_tip_scaled.stl"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "joint": [
+          {
+            "attributes": {
+              "name": "base_joint",
+              "type": "fixed"
+            },
+            "parent": {
+              "value": "world"
+            },
+            "child": {
+              "value": "base_link"
+            }
+          },
+          {
+            "attributes": {
+              "name": "base_joint_motor",
+              "type": "prismatic"
+            },
+            "child": {
+              "value": "motor"
+            },
+            "parent": {
+              "value": "base_link"
+            },
+            "axis": {
+              "xyz": {
+                "value": "0 0 1"
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.055"
+                },
+                "upper": {
+                  "value": "0.001"
+                },
+                "effort": {
+                  "value": "10.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              },
+              "dynamics": {
+                "damping": {
+                  "value": "0"
+                },
+                "friction": {
+                  "value": "0"
+                },
+                "spring_reference": {
+                  "value": "0"
+                },
+                "spring_stiffness": {
+                  "value": "0"
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "motor_left_hinge_joint",
+              "type": "revolute"
+            },
+            "child": {
+              "value": "left_hinge"
+            },
+            "parent": {
+              "value": "motor"
+            },
+            "axis": {
+              "xyz": {
+                "value": "0 1 0"
+              },
+              "limit": {
+                "lower": {
+                  "value": "-20.0"
+                },
+                "upper": {
+                  "value": "20.0"
+                },
+                "effort": {
+                  "value": "10"
+                },
+                "velocity": {
+                  "value": "10"
+                }
+              },
+              "dynamics": {
+                "damping": {
+                  "value": "0"
+                },
+                "friction": {
+                  "value": "0"
+                },
+                "spring_reference": {
+                  "value": "0"
+                },
+                "spring_stiffness": {
+                  "value": "0"
+                }
+              },
+              "use_parent_model_frame": {
+                "value": "0"
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "motor_right_hinge_joint",
+              "type": "revolute"
+            },
+            "child": {
+              "value": "right_hinge"
+            },
+            "parent": {
+              "value": "motor"
+            },
+            "axis": {
+              "xyz": {
+                "value": "0 1 0"
+              },
+              "limit": {
+                "lower": {
+                  "value": "-20.0"
+                },
+                "upper": {
+                  "value": "20.0"
+                },
+                "effort": {
+                  "value": "10"
+                },
+                "velocity": {
+                  "value": "10"
+                }
+              },
+              "dynamics": {
+                "damping": {
+                  "value": "0"
+                },
+                "friction": {
+                  "value": "0"
+                },
+                "spring_reference": {
+                  "value": "0"
+                },
+                "spring_stiffness": {
+                  "value": "0"
+                }
+              },
+              "use_parent_model_frame": {
+                "value": "0"
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "gripper_left_hinge_joint",
+              "type": "prismatic"
+            },
+            "child": {
+              "value": "gripper_left"
+            },
+            "parent": {
+              "value": "base_link"
+            },
+            "axis": {
+              "xyz": {
+                "value": "1 0 0"
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.01"
+                },
+                "upper": {
+                  "value": "0.05"
+                },
+                "effort": {
+                  "value": "1"
+                },
+                "velocity": {
+                  "value": "1"
+                }
+              },
+              "dynamics": {
+                "damping": {
+                  "value": "0"
+                },
+                "friction": {
+                  "value": "0"
+                },
+                "spring_reference": {
+                  "value": "0"
+                },
+                "spring_stiffness": {
+                  "value": "0"
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "gripper_right_hinge_joint",
+              "type": "prismatic"
+            },
+            "child": {
+              "value": "gripper_right"
+            },
+            "parent": {
+              "value": "base_link"
+            },
+            "axis": {
+              "xyz": {
+                "value": "1 0 0"
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.01"
+                },
+                "upper": {
+                  "value": "0.05"
+                },
+                "effort": {
+                  "value": "1"
+                },
+                "velocity": {
+                  "value": "1"
+                }
+              },
+              "dynamics": {
+                "damping": {
+                  "value": "0"
+                },
+                "friction": {
+                  "value": "0"
+                },
+                "spring_reference": {
+                  "value": "0"
+                },
+                "spring_stiffness": {
+                  "value": "0"
+                }
+              }
+            }
+          },
+          {
+            "attributes": {
+              "name": "gripper_finger_right",
+              "type": "fixed"
+            },
+            "parent": {
+              "value": "gripper_right"
+            },
+            "child": {
+              "value": "finger_right"
+            }
+          },
+          {
+            "attributes": {
+              "name": "gripper_finger_left",
+              "type": "fixed"
+            },
+            "parent": {
+              "value": "gripper_left"
+            },
+            "child": {
+              "value": "finger_left"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
