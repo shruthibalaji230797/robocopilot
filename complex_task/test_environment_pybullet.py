@@ -1,15 +1,8 @@
-import os
-import time
 import math
-import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
 import pybullet as p
 import pybullet_data
-import cv2
-# import imageio_ffmpeg
-from base64 import b64encode
-from IPython.display import HTML
 
 p.connect(p.GUI) #or p.GUI for graphical version
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
