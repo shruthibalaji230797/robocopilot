@@ -10,6 +10,7 @@ import cv2
 # import imageio_ffmpeg
 from base64 import b64encode
 from IPython.display import HTML
+import generate_sdf
 p.connect(p.GUI) #or p.GUI for graphical version
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-10)
@@ -64,15 +65,22 @@ for t in range(750):
         # vid.send(np.ascontiguousarray(image))
     
     target_pos, gripper_val = [0.85, -0.2, 0.97], 0
+    if t<150:
+        generate_sdf.generate_scene_sdf("scene_pre_grab.sdf")
     if t >= 150 and t < 250:
+        generate_sdf.generate_scene_sdf("scene_grab.sdf")
         target_pos, gripper_val = [0.85, -0.2, 0.97], 1 # grab object
     elif t >= 250 and t < 400:
+        generate_sdf.generate_scene_sdf("scene_move_up.sdf")
         target_pos, gripper_val = [0.85, -0.2, 0.97 + 0.13*(t-250)/150.], 1 # move up after picking object
     elif t >= 400 and t < 600:
+        generate_sdf.generate_scene_sdf("scene_move_to_target.sdf")
         target_pos, gripper_val = [0.85, -0.2 + 0.4*(t-400)/200., 1.1], 1 # move to target position
     elif t >= 600 and t < 700:
+        generate_sdf.generate_scene_sdf("scene_dropping.sdf")
         target_pos, gripper_val = [0.85, 0.2, 1.1], 1 # stop at target position
     elif t >= 700:
+        generate_sdf.generate_scene_sdf("scene_drop.sdf")
         target_pos, gripper_val = [0.85, 0.2, 1.1], 0 # drop object
 
     target_orn = p.getQuaternionFromEuler([0, 1.01*math.pi, 0])
