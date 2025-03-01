@@ -1,6 +1,8 @@
 # robocopilot
 An AI coding assistant tool specifically for robot programming
 
+VIDEO - https://drive.google.com/file/d/1kXq-WmxKcNMi7GpWVtIblE6G9McjjVyy/view?usp=drive_link
+
 <!-- Embed video using HTML -->
 <video width="600" controls>
   <source src="langflow/hack-agents-final.mp4" type="video/mp4">
