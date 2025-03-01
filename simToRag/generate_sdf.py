@@ -2,9 +2,15 @@ import pybullet as p
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 from pathlib import Path
-
+import os
 def generate_scene_sdf(output_path, world_name="simulation_world"):
+
     """Generate SDF file from current PyBullet simulation state including all objects"""
+
+    output_dir = os.path.dirname(output_path)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     # Create SDF structure
     sdf = ET.Element('sdf', version='1.6')
     world = ET.SubElement(sdf, 'world', name=world_name)
@@ -28,7 +34,7 @@ def generate_scene_sdf(output_path, world_name="simulation_world"):
         
         # Get dynamics info
         dynamics_info = p.getDynamicsInfo(body_id, -1)
-        print("dynamics info: ", dynamics_info)
+        # print("dynamics info: ", dynamics_info)
         
         # Add static flag if mass is 0
         if dynamics_info[0] == 0:  # mass

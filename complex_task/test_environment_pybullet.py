@@ -47,12 +47,12 @@ num_joints = p.getNumJoints(kuka_id)
 kuka_end_effector_idx = 6
 
 # camera parameters
-cam_target_pos = [.95, -0.2, 0.2]
-cam_distance = 2.05
-cam_yaw, cam_pitch, cam_roll = -50, -40, 0
-cam_width, cam_height = 480, 360
+cam_target_pos = [1.0, 0.0, 0.0]
+cam_distance = 3.5
+cam_yaw, cam_pitch, cam_roll = 0, -60, 0
+cam_width, cam_height = 1024, 768
 
-cam_up, cam_up_axis_idx, cam_near_plane, cam_far_plane, cam_fov = [0, 0, 1], 2, 0.01, 100, 60
+cam_up, cam_up_axis_idx, cam_near_plane, cam_far_plane, cam_fov = [0, 0, 1], 2, 0.01, 100, 75
 
 #video = cv2.VideoWriter('vid.avi', cv2.VideoWriter_fourcc(*'XVID'), 30, (cam_width, cam_height)) # Does not seem to support h264!
 # vid = imageio_ffmpeg.write_frames('vid.mp4', (cam_width, cam_height), fps=30)
@@ -65,6 +65,14 @@ for t in range(1400):
         cam_view_matrix = p.computeViewMatrixFromYawPitchRoll(cam_target_pos, cam_distance, cam_yaw, cam_pitch, cam_roll, cam_up_axis_idx)
         cam_projection_matrix = p.computeProjectionMatrixFOV(cam_fov, cam_width*1./cam_height, cam_near_plane, cam_far_plane)
         image = p.getCameraImage(cam_width, cam_height, cam_view_matrix, cam_projection_matrix)[2][:, :, :3]
+        img = Image.fromarray(image)
+
+        # Create directory for images if it doesn't exist
+        image_dir = "scene_images"
+        if not os.path.exists(image_dir):
+            os.makedirs(image_dir)
+        img.save(os.path.join(image_dir, "initial_scene_ceiling_view.png"))
+
         #video.write(cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
         # vid.send(np.ascontiguousarray(image))
     
