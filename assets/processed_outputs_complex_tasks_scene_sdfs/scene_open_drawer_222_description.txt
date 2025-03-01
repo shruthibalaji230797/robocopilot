@@ -1,0 +1,625 @@
+
+        Simulation Description: scene_open_drawer_222
+        Type: SDF (Simulation Description Format) file
+        Version: 1.6
+        
+        World Elements:
+        
+Attributes: {'version': '1.6'}
+world
+  Attributes: {'name': 'open_drawer'}
+  physics
+    Attributes: {'type': 'ode'}
+    gravity: 0 0 -9.81
+  model
+    Attributes: {'name': 'plane_0'}
+    static: true
+    link
+      Attributes: {'name': 'base_link'}
+      pose: 0.0 0.0 0.0 0.0 0.0 0.0 1.0
+      inertial
+        mass: 0.0
+        inertia
+          ixx: 0.0
+          ixy: 0.0
+          ixz: 0.0
+          iyy: 0.0
+          iyz: 0.0
+          izz: 0.0
+      surface
+        friction
+          ode
+            mu: 1.0
+            mu2: 0.0
+            fdir1: 0 0 0
+            slip1: 0.0
+            slip2: 0.0
+        contact
+          ode
+            kp: 0.0
+            kd: 0.0
+      damping
+        angular: 0.0
+      visual
+        Attributes: {'name': 'visual_0'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/plane100.obj
+        material
+          ambient: 1.0 1.0 1.0 1.0
+    Attributes: {'name': 'lbr_iiwa_1'}
+    static: true
+    link
+      Attributes: {'name': 'base_link'}
+      pose: 1.2999999999999998 -0.2 0.6699999999999999 0.0 0.0 0.0 1.0
+      inertial
+        mass: 0.0
+        inertia
+          ixx: 0.0
+          ixy: 0.0
+          ixz: 0.0
+          iyy: 0.0
+          iyz: 0.0
+          izz: 0.0
+      surface
+        friction
+          ode
+            mu: 0.5
+            mu2: 0.0
+            fdir1: 0 0 0
+            slip1: 0.0
+            slip2: 0.0
+        contact
+          ode
+            kp: 0.0
+            kd: 0.0
+      damping
+        angular: -0.1
+      visual
+        Attributes: {'name': 'visual_0'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_0.stl
+        material
+          ambient: 0.20000000298023224 0.20000000298023224 0.20000000298023224 1.0
+        Attributes: {'name': 'visual_1'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_1.stl
+        material
+          ambient: 0.5 0.699999988079071 1.0 1.0
+        Attributes: {'name': 'visual_2'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_2.stl
+        material
+          ambient: 0.5 0.699999988079071 1.0 1.0
+        Attributes: {'name': 'visual_3'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_3.stl
+        material
+          ambient: 1.0 0.42352941632270813 0.03921568766236305 1.0
+        Attributes: {'name': 'visual_4'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_4.stl
+        material
+          ambient: 0.5 0.699999988079071 1.0 1.0
+        Attributes: {'name': 'visual_5'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_5.stl
+        material
+          ambient: 0.5 0.699999988079071 1.0 1.0
+        Attributes: {'name': 'visual_6'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_6.stl
+        material
+          ambient: 1.0 0.42352941632270813 0.03921568766236305 1.0
+        Attributes: {'name': 'visual_7'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_7.stl
+        material
+          ambient: 0.20000000298023224 0.20000000298023224 0.20000000298023224 1.0
+      Attributes: {'name': 'link_lbr_iiwa_joint_1'}
+      pose: 1.3954051727493446 -0.22964603788934765 0.8775 0.0 0.0 -0.07680734672459777 0.9970459525463846
+      Attributes: {'name': 'link_lbr_iiwa_joint_2'}
+      pose: 1.369416163698574 -0.15275836016644656 1.0055844976162336 -0.18485854103512814 0.6825154355792369 0.6461495133826267 0.28721212780424715
+      Attributes: {'name': 'link_lbr_iiwa_joint_3'}
+      pose: 1.201180932680628 -0.13963444608841846 1.2238507691312344 0.012952995673710273 -0.3345427001756937 -0.18024084283006003 0.924892772292087
+      Attributes: {'name': 'link_lbr_iiwa_joint_4'}
+      pose: 1.0779631189312207 -0.16805476710723694 1.2416845847849511 -0.224594293850283 0.722382027384714 -0.5262029142430964 -0.38837108893880806
+      Attributes: {'name': 'link_lbr_iiwa_joint_5'}
+      pose: 0.9380093554499747 -0.08836807625861415 1.133512421528692 0.8669593191194181 -0.2031628325413798 -0.44509278073492087 -0.09486210520230823
+      Attributes: {'name': 'link_lbr_iiwa_joint_6'}
+      pose: 0.845001692897588 -0.020920642614322 1.050926117912189 -0.6925899384529233 0.16883098381697711 -0.148181785758432 0.685461475523322
+      Attributes: {'name': 'link_lbr_iiwa_joint_7'}
+      pose: 0.8417431745942561 -0.021609467276924827 0.9505805770095105 -0.001047485936826865 0.9998801431126993 -0.0016227682581848593 -0.015361276161835122
+    joint
+      Attributes: {'name': 'joint_lbr_iiwa_joint_1', 'type': 'revolute'}
+      parent: base_link
+      child: link_lbr_iiwa_joint_1
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -0.96705972839
+        upper: 0.96705972839
+        effort: 300.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_lbr_iiwa_joint_2', 'type': 'revolute'}
+      parent: link_lbr_iiwa_joint_1
+      child: link_lbr_iiwa_joint_2
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -2.09439510239
+        upper: 2.09439510239
+        effort: 300.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_lbr_iiwa_joint_3', 'type': 'revolute'}
+      parent: link_lbr_iiwa_joint_2
+      child: link_lbr_iiwa_joint_3
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -2.96705972839
+        upper: 2.96705972839
+        effort: 300.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_lbr_iiwa_joint_4', 'type': 'revolute'}
+      parent: link_lbr_iiwa_joint_3
+      child: link_lbr_iiwa_joint_4
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: 0.19439510239
+        upper: 2.29439510239
+        effort: 300.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_lbr_iiwa_joint_5', 'type': 'revolute'}
+      parent: link_lbr_iiwa_joint_4
+      child: link_lbr_iiwa_joint_5
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -2.96705972839
+        upper: 2.96705972839
+        effort: 300.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_lbr_iiwa_joint_6', 'type': 'revolute'}
+      parent: link_lbr_iiwa_joint_5
+      child: link_lbr_iiwa_joint_6
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -2.09439510239
+        upper: 2.09439510239
+        effort: 300.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_lbr_iiwa_joint_7', 'type': 'revolute'}
+      parent: link_lbr_iiwa_joint_6
+      child: link_lbr_iiwa_joint_7
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -3.05432619099
+        upper: 3.05432619099
+        effort: 300.0
+        velocity: 10.0
+    Attributes: {'name': 'wsg50_with_gripper_2'}
+    link
+      Attributes: {'name': 'base_link'}
+      pose: 0.8399787684314526 -0.030629668343655478 0.9006712205764343 -0.003091294605206416 0.9998684166394809 -0.0037892580979735965 -0.015467217836063293
+      inertial
+        mass: 0.1
+        inertia
+          ixx: 6.666666666666667e-08
+          ixy: 0.0
+          ixz: 0.0
+          iyy: 6.666666666666667e-08
+          iyz: 0.0
+          izz: 6.666666666666667e-08
+      surface
+        friction
+          ode
+            mu: 0.5
+            mu2: 0.0
+            fdir1: 0 0 0
+            slip1: 0.0
+            slip2: 0.0
+        contact
+          ode
+            kp: 0.0
+            kd: 0.0
+      damping
+        angular: 0.0
+      visual
+        Attributes: {'name': 'visual_0'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/WSG50_110.stl
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_1'}
+        geometry
+          box
+            size: 0.04 0.04 0.04
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_2'}
+        geometry
+          box
+            size: 0.04 0.04 0.14
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_3'}
+        geometry
+          box
+            size: 0.04 0.04 0.14
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_4'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/GUIDE_WSG50_110.stl
+            scale: 0.001 0.001 0.001
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_5'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/WSG-FMF.stl
+            scale: 0.001 0.001 0.001
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_6'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/l_gripper_tip_scaled.stl
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_7'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/GUIDE_WSG50_110.stl
+            scale: 0.001 0.001 0.001
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_8'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/WSG-FMF.stl
+            scale: 0.001 0.001 0.001
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_9'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/l_gripper_tip_scaled.stl
+        material
+          ambient: 1.0 1.0 1.0 1.0
+      Attributes: {'name': 'link_base_joint'}
+      pose: 0.8401426899263013 -0.02188908685193536 0.9006637552460224 -0.002650216888017942 0.9998650093338703 -0.003803350779074084 -0.015763057542153878
+      Attributes: {'name': 'link_base_joint_motor'}
+      pose: 0.8395468476031815 -0.02203452554737591 0.8817590934893925 -0.002650216888017942 0.9998650093338703 -0.003803350779074084 -0.015763057542153878
+      Attributes: {'name': 'link_motor_left_hinge_joint'}
+      pose: 0.8459308019169466 -0.02233352303637118 0.8374121405214036 -0.0030588675666621216 0.9953574863207845 -0.0034831675113094237 0.09613524482970448
+      Attributes: {'name': 'link_motor_right_hinge_joint'}
+      pose: 0.8310446137897887 -0.022411762348086926 0.8377367271190769 -0.0022479482170247524 0.9930276318306062 -0.00405411587350364 -0.11779063330416391
+      Attributes: {'name': 'link_gripper_left_hinge_joint'}
+      pose: 0.8436931185516311 -0.022408793705184487 0.8290182299806398 -0.002650216888017942 0.9998650093338703 -0.003803350779074084 -0.015763057542153878
+      Attributes: {'name': 'link_gripper_finger_left'}
+      pose: 0.8483741666388829 -0.022937693105314422 0.7553360879499593 0.7088849552197559 -0.7051377034330663 -0.008456782699711025 0.013835544318739535
+      Attributes: {'name': 'link_gripper_right_hinge_joint'}
+      pose: 0.8333771026356526 -0.022462122098495668 0.8293437832743141 0.999865005816696 0.0026515435038073597 -0.015763062588406405 0.003803329864726433
+      Attributes: {'name': 'link_gripper_finger_right'}
+      pose: 0.824065304656618 -0.02306353888612176 0.756103229506301 0.7051386439773863 0.7088840196460257 -0.013835555539143488 -0.008456764342773992
+    joint
+      Attributes: {'name': 'joint_base_joint', 'type': 'fixed'}
+      parent: base_link
+      child: link_base_joint
+      Attributes: {'name': 'joint_base_joint_motor', 'type': 'prismatic'}
+      parent: link_base_joint
+      child: link_base_joint_motor
+      axis
+        xyz: 0.0 0.0 1.0
+      limit
+        lower: -0.055
+        upper: 0.001
+        effort: 10.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_motor_left_hinge_joint', 'type': 'revolute'}
+      parent: link_base_joint_motor
+      child: link_motor_left_hinge_joint
+      axis
+        xyz: 0.0 1.0 0.0
+      limit
+        lower: -20.0
+        upper: 20.0
+        effort: 10.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_motor_right_hinge_joint', 'type': 'revolute'}
+      parent: link_motor_left_hinge_joint
+      child: link_motor_right_hinge_joint
+      axis
+        xyz: 0.0 1.0 0.0
+      limit
+        lower: -20.0
+        upper: 20.0
+        effort: 10.0
+        velocity: 10.0
+      Attributes: {'name': 'joint_gripper_left_hinge_joint', 'type': 'prismatic'}
+      parent: link_motor_right_hinge_joint
+      child: link_gripper_left_hinge_joint
+      axis
+        xyz: 1.0 0.0 0.0
+      limit
+        lower: -0.01
+        upper: 0.05
+        effort: 1.0
+        velocity: 1.0
+      Attributes: {'name': 'joint_gripper_finger_left', 'type': 'fixed'}
+      parent: link_gripper_left_hinge_joint
+      child: link_gripper_finger_left
+      Attributes: {'name': 'joint_gripper_right_hinge_joint', 'type': 'prismatic'}
+      parent: link_gripper_finger_left
+      child: link_gripper_right_hinge_joint
+      axis
+        xyz: 1.0 0.0 0.0
+      limit
+        lower: -0.01
+        upper: 0.05
+        effort: 1.0
+        velocity: 1.0
+      Attributes: {'name': 'joint_gripper_finger_right', 'type': 'fixed'}
+      parent: link_gripper_right_hinge_joint
+      child: link_gripper_finger_right
+    Attributes: {'name': 'table.urdf_3'}
+    static: true
+    link
+      Attributes: {'name': 'base_link'}
+      pose: 1.0 -0.2 0.0 -0.0 -0.0 0.7071067811865474 0.7071067811865477
+      inertial
+        mass: 0.0
+        inertia
+          ixx: 0.0
+          ixy: 0.0
+          ixz: 0.0
+          iyy: 0.0
+          iyz: 0.0
+          izz: 0.0
+      surface
+        friction
+          ode
+            mu: 1.0
+            mu2: 0.0
+            fdir1: 0 0 0
+            slip1: 0.0
+            slip2: 0.0
+        contact
+          ode
+            kp: 0.0
+            kd: 0.0
+      damping
+        angular: 0.0
+      visual
+        Attributes: {'name': 'visual_0'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj
+            scale: 1.5 1.0 0.05
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_1'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj
+            scale: 0.1 0.1 0.58
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_2'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj
+            scale: 0.1 0.1 0.58
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_3'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj
+            scale: 0.1 0.1 0.58
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_4'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj
+            scale: 0.1 0.1 0.58
+        material
+          ambient: 1.0 1.0 1.0 1.0
+    Attributes: {'name': 'cube_4'}
+    link
+      Attributes: {'name': 'base_link'}
+      pose: 0.8499981799525135 -0.4999885806341365 0.649988579515848 3.7578203965554276e-06 -3.5496054727900116e-05 -5.564143043833201e-05 0.9999999978149701
+      inertial
+        mass: 1.0
+        inertia
+          ixx: 0.00041666666666666675
+          ixy: 0.0
+          ixz: 0.0
+          iyy: 0.00041666666666666675
+          iyz: 0.0
+          izz: 0.00041666666666666675
+      surface
+        friction
+          ode
+            mu: 1.0
+            mu2: 0.0
+            fdir1: 0 0 0
+            slip1: 0.0
+            slip2: 0.0
+        contact
+          ode
+            kp: 0.0
+            kd: 0.0
+      damping
+        angular: 0.0
+      visual
+        Attributes: {'name': 'visual_0'}
+        geometry
+          mesh
+            uri: /opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/cube.obj
+            scale: 0.05 0.05 0.05
+        material
+          ambient: 1.0 1.0 1.0 1.0
+    Attributes: {'name': 'bowl.urdf_5'}
+    static: true
+    link
+      Attributes: {'name': 'base_link'}
+      pose: 0.85 0.2 0.65 0.0 0.0 0.0 1.0
+      inertial
+        mass: 0.0
+        inertia
+          ixx: 0.0
+          ixy: 0.0
+          ixz: 0.0
+          iyy: 0.0
+          iyz: 0.0
+          izz: 0.0
+      surface
+        friction
+          ode
+            mu: 0.5
+            mu2: 0.0
+            fdir1: 0 0 0
+            slip1: 0.0
+            slip2: 0.0
+        contact
+          ode
+            kp: 0.0
+            kd: 0.0
+      damping
+        angular: 0.0
+      visual
+        Attributes: {'name': 'visual_0'}
+        geometry
+          box
+            size: 0.6000000000000001 0.52 0.04000000000000001
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_1'}
+        geometry
+          box
+            size: 0.6000000000000001 0.020000000000000004 0.24
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_2'}
+        geometry
+          box
+            size: 0.020000000000000004 0.52 0.24
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_3'}
+        geometry
+          box
+            size: 0.020000000000000004 0.52 0.24
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_4'}
+        geometry
+          box
+            size: 0.5599999999999999 0.48 0.04000000000000001
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_5'}
+        geometry
+          box
+            size: 0.5599999999999999 0.020000000000000004 0.16000000000000003
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_6'}
+        geometry
+          box
+            size: 0.5599999999999999 0.020000000000000004 0.16000000000000003
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_7'}
+        geometry
+          box
+            size: 0.020000000000000004 0.48 0.16000000000000003
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_8'}
+        geometry
+          box
+            size: 0.020000000000000004 0.48 0.16000000000000003
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_9'}
+        geometry
+          mesh
+            uri: ../assets/drawer/../tray/tray_textured4_no_color.obj
+            scale: 0.22000000000000003 0.18000000000000002 0.27999999999999997
+        material
+          ambient: 1.0 1.0 1.0 1.0
+        Attributes: {'name': 'visual_10'}
+        geometry
+          box
+            size: 0.020000000000000004 0.24 0.072
+        material
+          ambient: 0.9300000071525574 0.6000000238418579 0.23000000417232513 1.0
+        Attributes: {'name': 'visual_11'}
+        geometry
+          box
+            size: 0.020000000000000004 0.24 0.072
+        material
+          ambient: 0.9300000071525574 0.6000000238418579 0.23000000417232513 1.0
+        Attributes: {'name': 'visual_12'}
+        geometry
+          cylinder
+            radius: 0.27999999999999997
+            length: 0.016
+        material
+          ambient: 0.9300000071525574 0.6000000238418579 0.23000000417232513 1.0
+      Attributes: {'name': 'link_frame_joint'}
+      pose: 0.85 0.2 0.65 0.0 0.0 0.0 1.0
+      Attributes: {'name': 'link_base_frame_joint'}
+      pose: 0.85 0.1743170183081862 0.63 0.0 0.0 0.0 1.0
+      Attributes: {'name': 'link_base_tray_joint'}
+      pose: 0.85 0.1743170183081862 0.6 0.0 0.0 0.9999996829318346 -0.0007963267107332631
+      Attributes: {'name': 'link_handle_plate_far_joint'}
+      pose: 0.72 0.034317018308186176 0.65 -0.0 0.706825181105366 -0.0 0.7073882691671998
+      Attributes: {'name': 'link_handle_plate_near_joint'}
+      pose: 0.98 0.034317018308186176 0.65 -0.0 0.706825181105366 -0.0 0.7073882691671998
+      Attributes: {'name': 'link_handle_r_joint'}
+      pose: 0.85 -0.04568298169181384 0.65 -0.0 0.706825181105366 -0.0 0.7073882691671998
+    joint
+      Attributes: {'name': 'joint_frame_joint', 'type': 'fixed'}
+      parent: base_link
+      child: link_frame_joint
+      Attributes: {'name': 'joint_base_frame_joint', 'type': 'prismatic'}
+      parent: link_frame_joint
+      child: link_base_frame_joint
+      axis
+        xyz: 0.0 1.0 0.0
+      limit
+        lower: -0.25
+        upper: 0.0
+        effort: 100.0
+        velocity: 100.0
+      Attributes: {'name': 'joint_base_tray_joint', 'type': 'fixed'}
+      parent: link_base_frame_joint
+      child: link_base_tray_joint
+      Attributes: {'name': 'joint_handle_plate_far_joint', 'type': 'fixed'}
+      parent: link_base_tray_joint
+      child: link_handle_plate_far_joint
+      Attributes: {'name': 'joint_handle_plate_near_joint', 'type': 'fixed'}
+      parent: link_handle_plate_far_joint
+      child: link_handle_plate_near_joint
+      Attributes: {'name': 'joint_handle_r_joint', 'type': 'fixed'}
+      parent: link_handle_plate_near_joint
+      child: link_handle_r_joint

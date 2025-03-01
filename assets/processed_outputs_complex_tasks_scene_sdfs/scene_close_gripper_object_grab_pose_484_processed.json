@@ -1,0 +1,1850 @@
+{
+  "file_type": "SDF",
+  "name": "scene_close_gripper_object_grab_pose_484",
+  "version": "1.6",
+  "content": {
+    "attributes": {
+      "version": "1.6"
+    },
+    "world": {
+      "attributes": {
+        "name": "close_gripper_object_grab_pose"
+      },
+      "physics": {
+        "attributes": {
+          "type": "ode"
+        },
+        "gravity": {
+          "value": "0 0 -9.81"
+        }
+      },
+      "model": [
+        {
+          "attributes": {
+            "name": "plane_0"
+          },
+          "static": {
+            "value": "true"
+          },
+          "link": {
+            "attributes": {
+              "name": "base_link"
+            },
+            "pose": {
+              "value": "0.0 0.0 0.0 0.0 0.0 0.0 1.0"
+            },
+            "inertial": {
+              "mass": {
+                "value": "0.0"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.0"
+                },
+                "ixy": {
+                  "value": "0.0"
+                },
+                "ixz": {
+                  "value": "0.0"
+                },
+                "iyy": {
+                  "value": "0.0"
+                },
+                "iyz": {
+                  "value": "0.0"
+                },
+                "izz": {
+                  "value": "0.0"
+                }
+              }
+            },
+            "surface": {
+              "friction": {
+                "ode": {
+                  "mu": {
+                    "value": "1.0"
+                  },
+                  "mu2": {
+                    "value": "0.0"
+                  },
+                  "fdir1": {
+                    "value": "0 0 0"
+                  },
+                  "slip1": {
+                    "value": "0.0"
+                  },
+                  "slip2": {
+                    "value": "0.0"
+                  }
+                }
+              },
+              "contact": {
+                "ode": {
+                  "kp": {
+                    "value": "0.0"
+                  },
+                  "kd": {
+                    "value": "0.0"
+                  }
+                }
+              }
+            },
+            "damping": {
+              "angular": {
+                "value": "0.0"
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "visual_0"
+              },
+              "geometry": {
+                "mesh": {
+                  "uri": {
+                    "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/plane100.obj"
+                  }
+                }
+              },
+              "material": {
+                "ambient": {
+                  "value": "1.0 1.0 1.0 1.0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "attributes": {
+            "name": "lbr_iiwa_1"
+          },
+          "static": {
+            "value": "true"
+          },
+          "link": [
+            {
+              "attributes": {
+                "name": "base_link"
+              },
+              "pose": {
+                "value": "1.2999999999999998 -0.2 0.6699999999999999 0.0 0.0 0.0 1.0"
+              },
+              "inertial": {
+                "mass": {
+                  "value": "0.0"
+                },
+                "inertia": {
+                  "ixx": {
+                    "value": "0.0"
+                  },
+                  "ixy": {
+                    "value": "0.0"
+                  },
+                  "ixz": {
+                    "value": "0.0"
+                  },
+                  "iyy": {
+                    "value": "0.0"
+                  },
+                  "iyz": {
+                    "value": "0.0"
+                  },
+                  "izz": {
+                    "value": "0.0"
+                  }
+                }
+              },
+              "surface": {
+                "friction": {
+                  "ode": {
+                    "mu": {
+                      "value": "0.5"
+                    },
+                    "mu2": {
+                      "value": "0.0"
+                    },
+                    "fdir1": {
+                      "value": "0 0 0"
+                    },
+                    "slip1": {
+                      "value": "0.0"
+                    },
+                    "slip2": {
+                      "value": "0.0"
+                    }
+                  }
+                },
+                "contact": {
+                  "ode": {
+                    "kp": {
+                      "value": "0.0"
+                    },
+                    "kd": {
+                      "value": "0.0"
+                    }
+                  }
+                }
+              },
+              "damping": {
+                "angular": {
+                  "value": "-0.1"
+                }
+              },
+              "visual": [
+                {
+                  "attributes": {
+                    "name": "visual_0"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_0.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.20000000298023224 0.20000000298023224 0.20000000298023224 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_1"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_1.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.5 0.699999988079071 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_2"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_2.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.5 0.699999988079071 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_3"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_3.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 0.42352941632270813 0.03921568766236305 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_4"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_4.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.5 0.699999988079071 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_5"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_5.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.5 0.699999988079071 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_6"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_6.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 0.42352941632270813 0.03921568766236305 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_7"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/kuka_iiwa/meshes/link_7.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.20000000298023224 0.20000000298023224 0.20000000298023224 1.0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_1"
+              },
+              "pose": {
+                "value": "1.4176998594000623 -0.22422220009037205 0.8774999999999998 -0.0 -0.0 0.3103170397520345 0.9506331231550551"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_2"
+              },
+              "pose": {
+                "value": "1.3421484708328575 -0.19025538279859655 1.0024656685879474 -0.4537233480111275 0.5423422567596268 0.7055854042374042 0.04635986766145009"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_3"
+              },
+              "pose": {
+                "value": "1.1997575413473305 -0.30995484194400486 1.2061770510948238 0.151227974918042 -0.3398468382963939 0.19565638645603595 0.9073879019146658"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_4"
+              },
+              "pose": {
+                "value": "1.128944287021215 -0.4225738650375316 1.2233041922700483 0.5105163195994072 -0.5568683129457178 0.6329686731267188 0.16917868748712753"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_5"
+              },
+              "pose": {
+                "value": "0.970106813557129 -0.4744797565336767 1.1247975601379803 0.8574172261179861 0.17591877846543494 -0.47505256386307754 0.09062750855277991"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_6"
+              },
+              "pose": {
+                "value": "0.8525474585650888 -0.499773650546957 1.0502883565648782 -0.6909787182267433 -0.12916397024973056 0.15066550120469843 0.6951007024120972"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_lbr_iiwa_joint_7"
+              },
+              "pose": {
+                "value": "0.849594558726833 -0.5001727797424517 0.9499317868824173 0.0005727006528566277 0.9998800021604968 -0.00016056691815464778 -0.015479906710053249"
+              }
+            }
+          ],
+          "joint": [
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_1",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "base_link"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_1"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.96705972839"
+                },
+                "upper": {
+                  "value": "0.96705972839"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_2",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_lbr_iiwa_joint_1"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_2"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-2.09439510239"
+                },
+                "upper": {
+                  "value": "2.09439510239"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_3",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_lbr_iiwa_joint_2"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_3"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-2.96705972839"
+                },
+                "upper": {
+                  "value": "2.96705972839"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_4",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_lbr_iiwa_joint_3"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_4"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "0.19439510239"
+                },
+                "upper": {
+                  "value": "2.29439510239"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_5",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_lbr_iiwa_joint_4"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_5"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-2.96705972839"
+                },
+                "upper": {
+                  "value": "2.96705972839"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_6",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_lbr_iiwa_joint_5"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_6"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-2.09439510239"
+                },
+                "upper": {
+                  "value": "2.09439510239"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_lbr_iiwa_joint_7",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_lbr_iiwa_joint_6"
+              },
+              "child": {
+                "value": "link_lbr_iiwa_joint_7"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-3.05432619099"
+                },
+                "upper": {
+                  "value": "3.05432619099"
+                },
+                "effort": {
+                  "value": "300.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "attributes": {
+            "name": "wsg50_with_gripper_2"
+          },
+          "link": [
+            {
+              "attributes": {
+                "name": "base_link"
+              },
+              "pose": {
+                "value": "0.8484167414258618 -0.5001893281674875 0.8999982607412561 0.0008461938772516538 0.999923680541899 -0.00025059163849323977 -0.012322915697805742"
+              },
+              "inertial": {
+                "mass": {
+                  "value": "0.1"
+                },
+                "inertia": {
+                  "ixx": {
+                    "value": "6.666666666666667e-08"
+                  },
+                  "ixy": {
+                    "value": "0.0"
+                  },
+                  "ixz": {
+                    "value": "0.0"
+                  },
+                  "iyy": {
+                    "value": "6.666666666666667e-08"
+                  },
+                  "iyz": {
+                    "value": "0.0"
+                  },
+                  "izz": {
+                    "value": "6.666666666666667e-08"
+                  }
+                }
+              },
+              "surface": {
+                "friction": {
+                  "ode": {
+                    "mu": {
+                      "value": "0.5"
+                    },
+                    "mu2": {
+                      "value": "0.0"
+                    },
+                    "fdir1": {
+                      "value": "0 0 0"
+                    },
+                    "slip1": {
+                      "value": "0.0"
+                    },
+                    "slip2": {
+                      "value": "0.0"
+                    }
+                  }
+                },
+                "contact": {
+                  "ode": {
+                    "kp": {
+                      "value": "0.0"
+                    },
+                    "kd": {
+                      "value": "0.0"
+                    }
+                  }
+                }
+              },
+              "damping": {
+                "angular": {
+                  "value": "0.0"
+                }
+              },
+              "visual": [
+                {
+                  "attributes": {
+                    "name": "visual_0"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/WSG50_110.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_1"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.04 0.04 0.04"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_2"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.04 0.04 0.14"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_3"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.04 0.04 0.14"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_4"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/GUIDE_WSG50_110.stl"
+                      },
+                      "scale": {
+                        "value": "0.001 0.001 0.001"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_5"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/WSG-FMF.stl"
+                      },
+                      "scale": {
+                        "value": "0.001 0.001 0.001"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_6"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/l_gripper_tip_scaled.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_7"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/GUIDE_WSG50_110.stl"
+                      },
+                      "scale": {
+                        "value": "0.001 0.001 0.001"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_8"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/WSG-FMF.stl"
+                      },
+                      "scale": {
+                        "value": "0.001 0.001 0.001"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_9"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/gripper/meshes/l_gripper_tip_scaled.stl"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "name": "link_base_joint"
+              },
+              "pose": {
+                "value": "0.8484215714300859 -0.500183621692509 0.8999926299699746 0.0008368564005096016 0.9999238308681523 -0.00023375501302274284 -0.012311681116631563"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_base_joint_motor"
+              },
+              "pose": {
+                "value": "0.8479572294869552 -0.5001920491425972 0.8811394325779703 0.0008368564005096016 0.9999238308681523 -0.00023375501302274284 -0.012311681116631563"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_motor_left_hinge_joint"
+              },
+              "pose": {
+                "value": "0.8542522526285947 -0.5002242093658756 0.8367591642256765 0.0008073277002031959 0.9955849348175687 -0.00032123515634464416 0.09386097482050934"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_motor_right_hinge_joint"
+              },
+              "pose": {
+                "value": "0.8399264386516699 -0.5002001894191358 0.8370191531828984 0.000855987421762004 0.9937178440276393 -0.00014918302508122713 -0.11191108743560285"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_gripper_left_hinge_joint"
+              },
+              "pose": {
+                "value": "0.8743504219176894 -0.500262086740448 0.8278323644118735 0.0008368564005096016 0.9999238308681523 -0.00023375501302274284 -0.012311681116631563"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_gripper_finger_left"
+              },
+              "pose": {
+                "value": "0.8795385820002073 -0.5003066869410464 0.7541823066672915 -0.7064608138784604 0.7076450284718035 0.008540378928045878 -0.008870967314172983"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_gripper_right_hinge_joint"
+              },
+              "pose": {
+                "value": "0.8182701593616091 -0.5001678095700325 0.8292135425234158 0.9999238319776089 -0.0008355297066730027 -0.012311681426765683 0.000233738677946862"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_gripper_finger_right"
+              },
+              "pose": {
+                "value": "0.8094625832231024 -0.5001888989945291 0.7559081801151951 0.7076459657997832 0.7064598749780261 -0.00887097864549635 -0.008540367158084199"
+              }
+            }
+          ],
+          "joint": [
+            {
+              "attributes": {
+                "name": "joint_base_joint",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "base_link"
+              },
+              "child": {
+                "value": "link_base_joint"
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_base_joint_motor",
+                "type": "prismatic"
+              },
+              "parent": {
+                "value": "link_base_joint"
+              },
+              "child": {
+                "value": "link_base_joint_motor"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 0.0 1.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.055"
+                },
+                "upper": {
+                  "value": "0.001"
+                },
+                "effort": {
+                  "value": "10.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_motor_left_hinge_joint",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_base_joint_motor"
+              },
+              "child": {
+                "value": "link_motor_left_hinge_joint"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 1.0 0.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-20.0"
+                },
+                "upper": {
+                  "value": "20.0"
+                },
+                "effort": {
+                  "value": "10.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_motor_right_hinge_joint",
+                "type": "revolute"
+              },
+              "parent": {
+                "value": "link_motor_left_hinge_joint"
+              },
+              "child": {
+                "value": "link_motor_right_hinge_joint"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 1.0 0.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-20.0"
+                },
+                "upper": {
+                  "value": "20.0"
+                },
+                "effort": {
+                  "value": "10.0"
+                },
+                "velocity": {
+                  "value": "10.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_gripper_left_hinge_joint",
+                "type": "prismatic"
+              },
+              "parent": {
+                "value": "link_motor_right_hinge_joint"
+              },
+              "child": {
+                "value": "link_gripper_left_hinge_joint"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "1.0 0.0 0.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.01"
+                },
+                "upper": {
+                  "value": "0.05"
+                },
+                "effort": {
+                  "value": "1.0"
+                },
+                "velocity": {
+                  "value": "1.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_gripper_finger_left",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "link_gripper_left_hinge_joint"
+              },
+              "child": {
+                "value": "link_gripper_finger_left"
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_gripper_right_hinge_joint",
+                "type": "prismatic"
+              },
+              "parent": {
+                "value": "link_gripper_finger_left"
+              },
+              "child": {
+                "value": "link_gripper_right_hinge_joint"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "1.0 0.0 0.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.01"
+                },
+                "upper": {
+                  "value": "0.05"
+                },
+                "effort": {
+                  "value": "1.0"
+                },
+                "velocity": {
+                  "value": "1.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_gripper_finger_right",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "link_gripper_right_hinge_joint"
+              },
+              "child": {
+                "value": "link_gripper_finger_right"
+              }
+            }
+          ]
+        },
+        {
+          "attributes": {
+            "name": "table.urdf_3"
+          },
+          "static": {
+            "value": "true"
+          },
+          "link": {
+            "attributes": {
+              "name": "base_link"
+            },
+            "pose": {
+              "value": "1.0 -0.2 0.0 -0.0 -0.0 0.7071067811865474 0.7071067811865477"
+            },
+            "inertial": {
+              "mass": {
+                "value": "0.0"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.0"
+                },
+                "ixy": {
+                  "value": "0.0"
+                },
+                "ixz": {
+                  "value": "0.0"
+                },
+                "iyy": {
+                  "value": "0.0"
+                },
+                "iyz": {
+                  "value": "0.0"
+                },
+                "izz": {
+                  "value": "0.0"
+                }
+              }
+            },
+            "surface": {
+              "friction": {
+                "ode": {
+                  "mu": {
+                    "value": "1.0"
+                  },
+                  "mu2": {
+                    "value": "0.0"
+                  },
+                  "fdir1": {
+                    "value": "0 0 0"
+                  },
+                  "slip1": {
+                    "value": "0.0"
+                  },
+                  "slip2": {
+                    "value": "0.0"
+                  }
+                }
+              },
+              "contact": {
+                "ode": {
+                  "kp": {
+                    "value": "0.0"
+                  },
+                  "kd": {
+                    "value": "0.0"
+                  }
+                }
+              }
+            },
+            "damping": {
+              "angular": {
+                "value": "0.0"
+              }
+            },
+            "visual": [
+              {
+                "attributes": {
+                  "name": "visual_0"
+                },
+                "geometry": {
+                  "mesh": {
+                    "uri": {
+                      "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj"
+                    },
+                    "scale": {
+                      "value": "1.5 1.0 0.05"
+                    }
+                  }
+                },
+                "material": {
+                  "ambient": {
+                    "value": "1.0 1.0 1.0 1.0"
+                  }
+                }
+              },
+              {
+                "attributes": {
+                  "name": "visual_1"
+                },
+                "geometry": {
+                  "mesh": {
+                    "uri": {
+                      "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj"
+                    },
+                    "scale": {
+                      "value": "0.1 0.1 0.58"
+                    }
+                  }
+                },
+                "material": {
+                  "ambient": {
+                    "value": "1.0 1.0 1.0 1.0"
+                  }
+                }
+              },
+              {
+                "attributes": {
+                  "name": "visual_2"
+                },
+                "geometry": {
+                  "mesh": {
+                    "uri": {
+                      "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj"
+                    },
+                    "scale": {
+                      "value": "0.1 0.1 0.58"
+                    }
+                  }
+                },
+                "material": {
+                  "ambient": {
+                    "value": "1.0 1.0 1.0 1.0"
+                  }
+                }
+              },
+              {
+                "attributes": {
+                  "name": "visual_3"
+                },
+                "geometry": {
+                  "mesh": {
+                    "uri": {
+                      "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj"
+                    },
+                    "scale": {
+                      "value": "0.1 0.1 0.58"
+                    }
+                  }
+                },
+                "material": {
+                  "ambient": {
+                    "value": "1.0 1.0 1.0 1.0"
+                  }
+                }
+              },
+              {
+                "attributes": {
+                  "name": "visual_4"
+                },
+                "geometry": {
+                  "mesh": {
+                    "uri": {
+                      "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/table/table.obj"
+                    },
+                    "scale": {
+                      "value": "0.1 0.1 0.58"
+                    }
+                  }
+                },
+                "material": {
+                  "ambient": {
+                    "value": "1.0 1.0 1.0 1.0"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "attributes": {
+            "name": "cube_4"
+          },
+          "link": {
+            "attributes": {
+              "name": "base_link"
+            },
+            "pose": {
+              "value": "0.8425906435268381 -0.5004534504736218 0.650088124418143 -0.00535629452935175 -0.003425505785142434 0.0015948381008769044 0.9999785160244508"
+            },
+            "inertial": {
+              "mass": {
+                "value": "1.0"
+              },
+              "inertia": {
+                "ixx": {
+                  "value": "0.00041666666666666675"
+                },
+                "ixy": {
+                  "value": "0.0"
+                },
+                "ixz": {
+                  "value": "0.0"
+                },
+                "iyy": {
+                  "value": "0.00041666666666666675"
+                },
+                "iyz": {
+                  "value": "0.0"
+                },
+                "izz": {
+                  "value": "0.00041666666666666675"
+                }
+              }
+            },
+            "surface": {
+              "friction": {
+                "ode": {
+                  "mu": {
+                    "value": "1.0"
+                  },
+                  "mu2": {
+                    "value": "0.0"
+                  },
+                  "fdir1": {
+                    "value": "0 0 0"
+                  },
+                  "slip1": {
+                    "value": "0.0"
+                  },
+                  "slip2": {
+                    "value": "0.0"
+                  }
+                }
+              },
+              "contact": {
+                "ode": {
+                  "kp": {
+                    "value": "0.0"
+                  },
+                  "kd": {
+                    "value": "0.0"
+                  }
+                }
+              }
+            },
+            "damping": {
+              "angular": {
+                "value": "0.0"
+              }
+            },
+            "visual": {
+              "attributes": {
+                "name": "visual_0"
+              },
+              "geometry": {
+                "mesh": {
+                  "uri": {
+                    "value": "/opt/homebrew/Caskroom/miniconda/base/envs/robo-copilot/lib/python3.11/site-packages/pybullet_data/cube.obj"
+                  },
+                  "scale": {
+                    "value": "0.05 0.05 0.05"
+                  }
+                }
+              },
+              "material": {
+                "ambient": {
+                  "value": "1.0 1.0 1.0 1.0"
+                }
+              }
+            }
+          }
+        },
+        {
+          "attributes": {
+            "name": "bowl.urdf_5"
+          },
+          "static": {
+            "value": "true"
+          },
+          "link": [
+            {
+              "attributes": {
+                "name": "base_link"
+              },
+              "pose": {
+                "value": "0.85 0.2 0.65 0.0 0.0 0.0 1.0"
+              },
+              "inertial": {
+                "mass": {
+                  "value": "0.0"
+                },
+                "inertia": {
+                  "ixx": {
+                    "value": "0.0"
+                  },
+                  "ixy": {
+                    "value": "0.0"
+                  },
+                  "ixz": {
+                    "value": "0.0"
+                  },
+                  "iyy": {
+                    "value": "0.0"
+                  },
+                  "iyz": {
+                    "value": "0.0"
+                  },
+                  "izz": {
+                    "value": "0.0"
+                  }
+                }
+              },
+              "surface": {
+                "friction": {
+                  "ode": {
+                    "mu": {
+                      "value": "0.5"
+                    },
+                    "mu2": {
+                      "value": "0.0"
+                    },
+                    "fdir1": {
+                      "value": "0 0 0"
+                    },
+                    "slip1": {
+                      "value": "0.0"
+                    },
+                    "slip2": {
+                      "value": "0.0"
+                    }
+                  }
+                },
+                "contact": {
+                  "ode": {
+                    "kp": {
+                      "value": "0.0"
+                    },
+                    "kd": {
+                      "value": "0.0"
+                    }
+                  }
+                }
+              },
+              "damping": {
+                "angular": {
+                  "value": "0.0"
+                }
+              },
+              "visual": [
+                {
+                  "attributes": {
+                    "name": "visual_0"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.6000000000000001 0.52 0.04000000000000001"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_1"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.6000000000000001 0.020000000000000004 0.24"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_2"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.020000000000000004 0.52 0.24"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_3"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.020000000000000004 0.52 0.24"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_4"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.5599999999999999 0.48 0.04000000000000001"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_5"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.5599999999999999 0.020000000000000004 0.16000000000000003"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_6"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.5599999999999999 0.020000000000000004 0.16000000000000003"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_7"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.020000000000000004 0.48 0.16000000000000003"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_8"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.020000000000000004 0.48 0.16000000000000003"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_9"
+                  },
+                  "geometry": {
+                    "mesh": {
+                      "uri": {
+                        "value": "../assets/drawer/../tray/tray_textured4_no_color.obj"
+                      },
+                      "scale": {
+                        "value": "0.22000000000000003 0.18000000000000002 0.27999999999999997"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "1.0 1.0 1.0 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_10"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.020000000000000004 0.24 0.072"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.9300000071525574 0.6000000238418579 0.23000000417232513 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_11"
+                  },
+                  "geometry": {
+                    "box": {
+                      "size": {
+                        "value": "0.020000000000000004 0.24 0.072"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.9300000071525574 0.6000000238418579 0.23000000417232513 1.0"
+                    }
+                  }
+                },
+                {
+                  "attributes": {
+                    "name": "visual_12"
+                  },
+                  "geometry": {
+                    "cylinder": {
+                      "radius": {
+                        "value": "0.27999999999999997"
+                      },
+                      "length": {
+                        "value": "0.016"
+                      }
+                    }
+                  },
+                  "material": {
+                    "ambient": {
+                      "value": "0.9300000071525574 0.6000000238418579 0.23000000417232513 1.0"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "attributes": {
+                "name": "link_frame_joint"
+              },
+              "pose": {
+                "value": "0.85 0.2 0.65 0.0 0.0 0.0 1.0"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_base_frame_joint"
+              },
+              "pose": {
+                "value": "0.85 0.09072619472443232 0.63 0.0 0.0 0.0 1.0"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_base_tray_joint"
+              },
+              "pose": {
+                "value": "0.85 0.09072619472443232 0.6 0.0 0.0 0.9999996829318346 -0.0007963267107332631"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_handle_plate_far_joint"
+              },
+              "pose": {
+                "value": "0.72 -0.0492738052755677 0.65 -0.0 0.706825181105366 -0.0 0.7073882691671998"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_handle_plate_near_joint"
+              },
+              "pose": {
+                "value": "0.98 -0.0492738052755677 0.65 -0.0 0.706825181105366 -0.0 0.7073882691671998"
+              }
+            },
+            {
+              "attributes": {
+                "name": "link_handle_r_joint"
+              },
+              "pose": {
+                "value": "0.85 -0.1292738052755677 0.65 -0.0 0.706825181105366 -0.0 0.7073882691671998"
+              }
+            }
+          ],
+          "joint": [
+            {
+              "attributes": {
+                "name": "joint_frame_joint",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "base_link"
+              },
+              "child": {
+                "value": "link_frame_joint"
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_base_frame_joint",
+                "type": "prismatic"
+              },
+              "parent": {
+                "value": "link_frame_joint"
+              },
+              "child": {
+                "value": "link_base_frame_joint"
+              },
+              "axis": {
+                "xyz": {
+                  "value": "0.0 1.0 0.0"
+                }
+              },
+              "limit": {
+                "lower": {
+                  "value": "-0.25"
+                },
+                "upper": {
+                  "value": "0.0"
+                },
+                "effort": {
+                  "value": "100.0"
+                },
+                "velocity": {
+                  "value": "100.0"
+                }
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_base_tray_joint",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "link_base_frame_joint"
+              },
+              "child": {
+                "value": "link_base_tray_joint"
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_handle_plate_far_joint",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "link_base_tray_joint"
+              },
+              "child": {
+                "value": "link_handle_plate_far_joint"
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_handle_plate_near_joint",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "link_handle_plate_far_joint"
+              },
+              "child": {
+                "value": "link_handle_plate_near_joint"
+              }
+            },
+            {
+              "attributes": {
+                "name": "joint_handle_r_joint",
+                "type": "fixed"
+              },
+              "parent": {
+                "value": "link_handle_plate_near_joint"
+              },
+              "child": {
+                "value": "link_handle_r_joint"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

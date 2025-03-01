@@ -1,0 +1,205 @@
+{
+  "robot_name": "table.urdf",
+  "materials": [
+    {
+      "name": "white",
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "links": [
+    {
+      "name": "baseLink",
+      "contact": {
+        "lateral_friction": 1.0
+      },
+      "inertial": {
+        "origin": {
+          "xyz": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rpy": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "mass": 0.0,
+        "inertia": {
+          "ixx": 1.0,
+          "ixy": 0.0,
+          "ixz": 0.0,
+          "iyy": 1.0,
+          "iyz": 0.0,
+          "izz": 1.0
+        }
+      },
+      "visual": [
+        {
+          "origin": {
+            "xyz": [
+              0.0,
+              0.0,
+              0.6
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "table.obj",
+            "scale": [
+              1.5,
+              1.0,
+              0.05
+            ]
+          },
+          "material": {
+            "name": "white",
+            "color": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "origin": {
+            "xyz": [
+              -0.65,
+              -0.4,
+              0.29
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "table.obj",
+            "scale": [
+              0.1,
+              0.1,
+              0.58
+            ]
+          },
+          "material": {
+            "name": "framemat0"
+          }
+        },
+        {
+          "origin": {
+            "xyz": [
+              -0.65,
+              0.4,
+              0.29
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "table.obj",
+            "scale": [
+              0.1,
+              0.1,
+              0.58
+            ]
+          },
+          "material": {
+            "name": "framemat0"
+          }
+        },
+        {
+          "origin": {
+            "xyz": [
+              0.65,
+              -0.4,
+              0.29
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "table.obj",
+            "scale": [
+              0.1,
+              0.1,
+              0.58
+            ]
+          },
+          "material": {
+            "name": "framemat0"
+          }
+        },
+        {
+          "origin": {
+            "xyz": [
+              0.65,
+              0.4,
+              0.29
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "mesh",
+            "filename": "table.obj",
+            "scale": [
+              0.1,
+              0.1,
+              0.58
+            ]
+          }
+        }
+      ],
+      "collision": [
+        {
+          "origin": {
+            "xyz": [
+              0.0,
+              0.0,
+              0.6
+            ],
+            "rpy": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "geometry": {
+            "type": "box",
+            "size": [
+              1.5,
+              1.0,
+              0.05
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "joints": []
+}
