@@ -33,7 +33,7 @@ class ThreeDFileProcessor:
     def process_all_files(self):
         """Process all supported files in the directory"""
         for file_path in self.directory.glob("*"):
-            if file_path.suffix.lower() in ['.stl', '.mtl', '.sdf', '.urdf', '.yaml', '.yml']:
+            if file_path.suffix.lower() in ['.stl', '.mtl', '.sdf', '.urdf', '.yaml', '.yml', '.obj']:
                 print(f"Processing: {file_path.name}")
                 try:
                     self.process_file(file_path)
@@ -48,7 +48,8 @@ class ThreeDFileProcessor:
             '.sdf': self.process_sdf,
             '.urdf': self.process_urdf,
             '.yaml': self.process_yaml,
-            '.yml': self.process_yaml
+            '.yml': self.process_yaml,
+            '.obj': self.process_obj
         }
         
         processor = processors.get(file_path.suffix.lower())
@@ -254,6 +255,91 @@ class ThreeDFileProcessor:
             
         except Exception as e:
             raise Exception(f"Error processing YAML file: {str(e)}")
+        
+    def process_obj(self, file_path):
+        """Process OBJ (3D Model) files"""
+        try:
+            vertices = []
+            faces = []
+            normals = []
+            uvs = []
+            materials = {}
+            current_material = None
+            
+            with open(file_path, 'r') as f:
+                for line in f:
+                    if line.startswith('#'): continue  # Skip comments
+                    
+                    values = line.split()
+                    if not values: continue
+                    
+                    if values[0] == 'v':  # Vertex
+                        vertices.append([float(x) for x in values[1:4]])
+                    elif values[0] == 'vn':  # Normal
+                        normals.append([float(x) for x in values[1:4]])
+                    elif values[0] == 'vt':  # Texture coordinate
+                        uvs.append([float(x) for x in values[1:3]])
+                    elif values[0] == 'f':  # Face
+                        face = []
+                        for v in values[1:]:
+                            w = v.split('/')
+                            # OBJ is 1-indexed, convert to 0-indexed
+                            face.append([int(i)-1 if i else None for i in w])
+                        faces.append(face)
+                    elif values[0] == 'mtllib':  # Material library
+                        materials['mtllib'] = values[1]
+                    elif values[0] == 'usemtl':  # Use material
+                        current_material = values[1]
+                    elif values[0] == 'o':  # Object name
+                        if len(values) > 1:
+                            current_object = values[1]
+            
+            json_data = {
+                "file_type": "OBJ",
+                "name": file_path.stem,
+                "geometry": {
+                    "vertices_count": len(vertices),
+                    "faces_count": len(faces),
+                    "normals_count": len(normals),
+                    "uvs_count": len(uvs)
+                },
+                "materials": {
+                    "material_library": materials.get('mtllib'),
+                    "materials_used": current_material
+                },
+                "bounds": {
+                    "min": [min(v[i] for v in vertices) for i in range(3)],
+                    "max": [max(v[i] for v in vertices) for i in range(3)]
+                }
+            }
+            
+            # Create human-readable description
+            text_description = f"""
+            3D Model Description: {file_path.stem}
+            Type: OBJ (Wavefront) file
+            
+            Geometric Properties:
+            - Vertices: {len(vertices)}
+            - Faces: {len(faces)}
+            - Normals: {len(normals)}
+            - UV Coordinates: {len(uvs)}
+            
+            Material Information:
+            - Material Library: {materials.get('mtllib', 'None')}
+            - Active Material: {current_material}
+            
+            Bounding Box:
+            - Min: {[f'{x:.3f}' for x in json_data['bounds']['min']]}
+            - Max: {[f'{x:.3f}' for x in json_data['bounds']['max']]}
+            
+            Objects:
+            - Current Object: {current_object if 'current_object' in locals() else 'None'}
+            """
+            
+            return json_data, text_description
+            
+        except Exception as e:
+            raise Exception(f"Error processing OBJ file: {str(e)}")
 
     # def process_urdf(self, file_path):
     #     """Process URDF files safely"""
@@ -298,7 +384,7 @@ class ThreeDFileProcessor:
     #         raise Exception(f"URDF processing error: {str(e)}")
 
     def process_urdf(self, file_path):
-        """ Parses a URDF file and returns detailed JSON and TXT formatted data """
+        """Process URDF files with support for all common elements"""
         try:
             tree = ET.parse(file_path)
             root = tree.getroot()
@@ -308,93 +394,179 @@ class ThreeDFileProcessor:
             
             links = []
             joints = []
+            materials = []
             txt_output = f"Robot Name: {robot_name}\n\n"
 
-            txt_output += "=== LINK DETAILS ===\n"
+            # Process materials
+            txt_output += "=== MATERIALS ===\n"
+            for material in root.findall(".//material"):
+                material_name = material.attrib.get("name", "Unnamed Material")
+                color_elem = material.find("color")
+                if color_elem is not None:
+                    rgba = color_elem.attrib.get("rgba", "0 0 0 0")
+                    materials.append({
+                        "name": material_name,
+                        "rgba": [float(x) for x in rgba.split()]
+                    })
+                    txt_output += f"Material: {material_name}\n"
+                    txt_output += f"  - RGBA: {rgba}\n"
+
+            # Process links
+            txt_output += "\n=== LINK DETAILS ===\n"
             for link in root.findall("link"):
                 link_name = link.attrib.get("name", "Unnamed Link")
-                
-                # Extract visuals
-                visuals = [visual.attrib.get("filename", "No Mesh Provided") 
-                        for visual in link.findall("visual/geometry/mesh")]
+                link_data = {"name": link_name}
 
-                # Extract collisions
-                collisions = [collision.attrib.get("filename", "No Mesh Provided") 
-                            for collision in link.findall("collision/geometry/mesh")]
+                # Process contact properties
+                contact = link.find("contact")
+                if contact is not None:
+                    contact_data = {}
+                    for prop in contact:
+                        contact_data[prop.tag] = float(prop.attrib.get("value", 0))
+                    link_data["contact"] = contact_data
+                    txt_output += f"\nContact Properties for {link_name}:\n"
+                    for prop, value in contact_data.items():
+                        txt_output += f"  - {prop}: {value}\n"
 
-                # Extract inertial properties
-                mass = 0.0
-                inertia = {}
+                # Process inertial properties
                 inertial = link.find("inertial")
                 if inertial is not None:
-                    mass_elem = inertial.find("mass")
-                    if mass_elem is not None:
-                        mass = float(mass_elem.attrib.get("value", 0.0))
-                    
-                    inertia_elem = inertial.find("inertia")
-                    if inertia_elem is not None:
-                        inertia = {k: float(v) for k, v in inertia_elem.attrib.items()}
+                    inertial_data = {}
+                    origin = inertial.find("origin")
+                    if origin is not None:
+                        inertial_data["origin"] = {
+                            "xyz": [float(x) for x in origin.attrib.get("xyz", "0 0 0").split()],
+                            "rpy": [float(x) for x in origin.attrib.get("rpy", "0 0 0").split()]
+                        }
+                    mass = inertial.find("mass")
+                    if mass is not None:
+                        inertial_data["mass"] = float(mass.attrib.get("value", "0"))
+                    inertia = inertial.find("inertia")
+                    if inertia is not None:
+                        inertial_data["inertia"] = {k: float(v) for k, v in inertia.attrib.items()}
+                    link_data["inertial"] = inertial_data
 
-                link_data = {
-                    "name": link_name,
-                    "visuals": visuals if visuals else ["Not Provided"],
-                    "collisions": collisions if collisions else ["Not Provided"],
-                    "mass": mass if mass else "Not Provided",
-                    "inertia": inertia if inertia else "Not Provided",
-                }
+                # Process visual properties
+                visuals = link.findall("visual")
+                if visuals:
+                    link_data["visual"] = []
+                    for idx, visual in enumerate(visuals):
+                        visual_data = {}
+                        origin = visual.find("origin")
+                        if origin is not None:
+                            visual_data["origin"] = {
+                                "xyz": [float(x) for x in origin.attrib.get("xyz", "0 0 0").split()],
+                                "rpy": [float(x) for x in origin.attrib.get("rpy", "0 0 0").split()]
+                            }
+                        
+                        geometry = visual.find("geometry")
+                        if geometry is not None:
+                            geo_data = {}
+                            for geo_type in ['mesh', 'box', 'cylinder', 'sphere']:
+                                geo_elem = geometry.find(geo_type)
+                                if geo_elem is not None:
+                                    geo_data["type"] = geo_type
+                                    if geo_type == 'mesh':
+                                        geo_data["filename"] = geo_elem.attrib.get("filename", "")
+                                        geo_data["scale"] = [float(x) for x in geo_elem.attrib.get("scale", "1 1 1").split()]
+                                    elif geo_type == 'box':
+                                        geo_data["size"] = [float(x) for x in geo_elem.attrib.get("size", "1 1 1").split()]
+                                    elif geo_type in ['cylinder', 'sphere']:
+                                        for attr in ['radius', 'length']:
+                                            if attr in geo_elem.attrib:
+                                                geo_data[attr] = float(geo_elem.attrib[attr])
+                            visual_data["geometry"] = geo_data
+
+                        material = visual.find("material")
+                        if material is not None:
+                            material_data = {"name": material.attrib.get("name", "")}
+                            color = material.find("color")
+                            if color is not None:
+                                material_data["color"] = [float(x) for x in color.attrib.get("rgba", "1 1 1 1").split()]
+                            visual_data["material"] = material_data
+                        
+                        link_data["visual"].append(visual_data)
+
+                # Process collision properties
+                collisions = link.findall("collision")
+                if collisions:
+                    link_data["collision"] = []
+                    for collision in collisions:
+                        collision_data = {}
+                        origin = collision.find("origin")
+                        if origin is not None:
+                            collision_data["origin"] = {
+                                "xyz": [float(x) for x in origin.attrib.get("xyz", "0 0 0").split()],
+                                "rpy": [float(x) for x in origin.attrib.get("rpy", "0 0 0").split()]
+                            }
+                        
+                        geometry = collision.find("geometry")
+                        if geometry is not None:
+                            geo_data = {}
+                            for geo_type in ['mesh', 'box', 'cylinder', 'sphere']:
+                                geo_elem = geometry.find(geo_type)
+                                if geo_elem is not None:
+                                    geo_data["type"] = geo_type
+                                    if geo_type == 'mesh':
+                                        geo_data["filename"] = geo_elem.attrib.get("filename", "")
+                                        geo_data["scale"] = [float(x) for x in geo_elem.attrib.get("scale", "1 1 1").split()]
+                                    elif geo_type == 'box':
+                                        geo_data["size"] = [float(x) for x in geo_elem.attrib.get("size", "1 1 1").split()]
+                                    elif geo_type in ['cylinder', 'sphere']:
+                                        for attr in ['radius', 'length']:
+                                            if attr in geo_elem.attrib:
+                                                geo_data[attr] = float(geo_elem.attrib[attr])
+                            collision_data["geometry"] = geo_data
+                        
+                        link_data["collision"].append(collision_data)
+
                 links.append(link_data)
 
-                # Append to TXT output
-                txt_output += f"\nLink Name: {link_name}\n"
-                txt_output += f"  - Visual Elements: {', '.join(visuals) if visuals else 'Not Provided'}\n"
-                txt_output += f"  - Collision Elements: {', '.join(collisions) if collisions else 'Not Provided'}\n"
-                txt_output += f"  - Mass: {mass} kg\n"
-                txt_output += f"  - Inertia Tensor: {inertia if inertia else 'Not Provided'}\n"
-
+            # Process joints (same as before)
             txt_output += "\n=== JOINT DETAILS ===\n"
             for joint in root.findall("joint"):
                 joint_name = joint.attrib.get("name", "Unnamed Joint")
-                joint_type = joint.attrib.get("type", "Unknown Type")
-
-                parent = joint.find("parent").attrib.get("link", "Unknown")
-                child = joint.find("child").attrib.get("link", "Unknown")
-
-                # Joint limits
-                limit = {}
-                limit_elem = joint.find("limit")
-                if limit_elem is not None:
-                    limit = {k: float(v) for k, v in limit_elem.attrib.items()}
-
+                joint_type = joint.attrib.get("type", "unknown")
+                
                 joint_data = {
                     "name": joint_name,
-                    "type": joint_type,
-                    "parent": parent,
-                    "child": child,
-                    "limit": limit if limit else "Not Provided",
+                    "type": joint_type
                 }
+
+                for elem in ["parent", "child"]:
+                    element = joint.find(elem)
+                    if element is not None:
+                        joint_data[elem] = element.attrib.get("link", "")
+
+                for elem in ["origin", "axis"]:
+                    element = joint.find(elem)
+                    if element is not None:
+                        joint_data[elem] = {k: [float(x) for x in v.split()] 
+                                        for k, v in element.attrib.items()}
+
+                for elem in ["limit", "dynamics"]:
+                    element = joint.find(elem)
+                    if element is not None:
+                        joint_data[elem] = {k: float(v) for k, v in element.attrib.items()}
+
                 joints.append(joint_data)
+                txt_output += f"\nJoint: {joint_name}\n"
+                txt_output += f"  Type: {joint_type}\n"
+                for key, value in joint_data.items():
+                    if key not in ["name", "type"]:
+                        txt_output += f"  {key}: {value}\n"
 
-                # Append to TXT output
-                txt_output += f"\nJoint Name: {joint_name}\n"
-                txt_output += f"  - Type: {joint_type}\n"
-                txt_output += f"  - Connects Parent: {parent} to Child: {child}\n"
-                txt_output += f"  - Motion Limits: {limit if limit else 'Not Provided'}\n"
-
-            # Convert structured data to JSON
-            json_output = json.dumps({
+            json_data = {
                 "robot_name": robot_name,
-                "total_links": len(links),
-                "total_joints": len(joints),
+                "materials": materials,
                 "links": links,
                 "joints": joints
-            }, indent=4)
+            }
 
-            return json_output, txt_output
+            return json_data, txt_output
 
         except Exception as e:
-            print(f"Error parsing URDF: {e}")
-            return None, None
-
+            raise Exception(f"Error processing URDF file {file_path}: {str(e)}")
     def _process_inertial(self, inertial):
         """Process inertial data for KUKA LBR iiwa format"""
         if not inertial:
@@ -621,7 +793,7 @@ if __name__ == "__main__":
         sys.exit(1)
         
     # Check for supported files
-    supported_extensions = {'.stl', '.mtl', '.sdf', '.urdf', '.yaml', '.yml'}
+    supported_extensions = {'.stl', '.mtl', '.sdf', '.urdf', '.yaml', '.yml', '.obj'}
     files = [f for f in input_dir.glob("*") if f.suffix.lower() in supported_extensions]
     
     if not files:
