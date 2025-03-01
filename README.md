@@ -1,13 +1,11 @@
 # robocopilot
 An AI coding assistant tool specifically for robot programming
 
-
-
-VIDEO - https://drive.google.com/file/d/1kXq-WmxKcNMi7GpWVtIblE6G9McjjVyy/view?usp=drive_link
-
-
-
-VIDEO - https://drive.google.com/file/d/1kXq-WmxKcNMi7GpWVtIblE6G9McjjVyy/view?usp=drive_link
+<!-- Embed video using HTML -->
+<video width="600" controls>
+  <source src="langflow/hack-agents-final.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 RoboCopilot is an agentic workflow using OpenAI models. It has the following structure on LangFlow:
 
@@ -29,7 +27,7 @@ We try to impart this knowledge to the LLM by exporting the following data from 
 
 3. We add an image of the initial scene
 
-![LangFlow Structure](langflow/initial_scene.png "Title")
+![Scene Image](langflow/initial_scene.png "Title")
 
 With this information, the LLM actually produces slightly improved code, with the robot at least moving to the expected locations of the objects.
 
