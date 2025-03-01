@@ -22,51 +22,49 @@ kuka_cid2 = p.createConstraint(kuka_gripper_id, 4, kuka_gripper_id, 6, jointType
 p.changeConstraint(kuka_cid2, gearRatio=-1, erp=0.5, relativePositionTarget=0, maxForce=100)
 
 # Function to move the robot to a specific position using inverse kinematics
-def move_robot_to(position):
+def move_robot_to(position, gripper_val=0):
     end_effector_index = 6  # Kuka's end effector index
-    joint_positions = p.calculateInverseKinematics(kuka_id, end_effector_index, position)
-    p.setJointMotorControlArray(kuka_id, jointIndices=range(7), controlMode=p.POSITION_CONTROL, targetPositions=joint_positions)
-    time.sleep(1)
+    target_orn = p.getQuaternionFromEuler([0, 1.01 * math.pi, 0])  # Adjust orientation as needed
+    joint_positions = p.calculateInverseKinematics(kuka_id, end_effector_index, position, target_orn)
+    
+    for j in range(7):  # Assuming Kuka has 7 joints
+        p.setJointMotorControl2(bodyIndex=kuka_id, jointIndex=j, controlMode=p.POSITION_CONTROL, targetPosition=joint_positions[j])
+    
+    # Control the gripper
+    p.setJointMotorControl2(kuka_gripper_id, 4, p.POSITION_CONTROL, targetPosition=gripper_val * 0.05, force=100)
+    p.setJointMotorControl2(kuka_gripper_id, 6, p.POSITION_CONTROL, targetPosition=gripper_val * 0.05, force=100)
+    
+    p.stepSimulation()
 
 # Task 1: Robot moves to the location of the drawer handle and opens the drawer
 def open_drawer():
-    # Target pose above the drawer handle
     handle_pose = [0.85, 0.2, 0.75]  # Adjust height as necessary
     move_robot_to(handle_pose)
-    # Pull and open the drawer
-    p.setJointMotorControl2(drawer_id, jointIndex=0, controlMode=p.POSITION_CONTROL, targetPosition=0.5)  # Assume joint index 0 is for opening the drawer
-    time.sleep(1)
+    p.setJointMotorControl2(drawer_id, jointIndex=0, controlMode=p.POSITION_CONTROL, targetPosition=0.5)  # Open the drawer
+    p.stepSimulation()
 
 # Task 2: Robot moves to a location above the cube and picks it up
 def pick_up_cube():
-    # Move to position above the cube
     cube_pose = [0.85, -0.5, 0.65]  # Position above the cube
     move_robot_to(cube_pose)
-    # Close gripper to pick up the cube
-    p.setJointMotorControl2(kuka_gripper_id, jointIndex=0, controlMode=p.POSITION_CONTROL, targetPosition=0.1)  # Close gripper
-    time.sleep(1)
+    move_robot_to(cube_pose, gripper_val=1)  # Close gripper to pick up the cube
 
 # Task 3: Robot places the cube inside the drawer
 def place_cube_in_drawer():
-    # Move to position above the drawer
     drawer_pose = [0.85, 0.2, 0.65]  # Position above the drawer
     move_robot_to(drawer_pose)
-    # Open gripper to release the cube
-    p.setJointMotorControl2(kuka_gripper_id, jointIndex=0, controlMode=p.POSITION_CONTROL, targetPosition=0.0)  # Open gripper
-    time.sleep(1)
+    move_robot_to(drawer_pose, gripper_val=0)  # Open gripper to release the cube
 
 # Task 4: Robot closes the drawer by placing the gripper on the handle and pushing it to closure
 def close_drawer():
-    # Move to position above the drawer handle for closing
     handle_pose_close = [0.85, 0.2, 0.75]  # Adjust height as necessary
     move_robot_to(handle_pose_close)
-    # Push the drawer to close
     p.setJointMotorControl2(drawer_id, jointIndex=0, controlMode=p.POSITION_CONTROL, targetPosition=0)  # Close the drawer
-    time.sleep(1)
+    p.stepSimulation()
 
 # Main task sequence
 try:
-    open_drawer()          # Task 1: Open the drawer
+    # open_drawer()          # Task 1: Open the drawer
     pick_up_cube()        # Task 2: Pick up the cube
     place_cube_in_drawer()# Task 3: Place the cube inside the drawer
     close_drawer()        # Task 4: Close the drawer
