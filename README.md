@@ -1,6 +1,6 @@
 # robocopilot
 
-An AI coding assistant tool specifically for robot programming | WINNER - Best use of OpenAI, Hack Agents hackathon 2025
+An AI coding assistant tool specifically for robot programming | WINNER - Best use of OpenAI, Hack Agents hackathon 2025 (https://datastax.notion.site/Hacking-Agents-Hackathon-SF-1927eb4bde5680ea993dc8304078c83d)
 
 VIDEO - https://drive.google.com/file/d/1kXq-WmxKcNMi7GpWVtIblE6G9McjjVyy/view?usp=drive_link
 
