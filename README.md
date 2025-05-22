@@ -1,9 +1,17 @@
 # robocopilot
-
 An AI coding assistant tool specifically for robot programming | WINNER - Best use of OpenAI, Hack Agents hackathon 2025 (https://datastax.notion.site/Hacking-Agents-Hackathon-SF-1927eb4bde5680ea993dc8304078c83d)
 
 VIDEO - https://drive.google.com/file/d/1kXq-WmxKcNMi7GpWVtIblE6G9McjjVyy/view?usp=drive_link
 
+Update - robocopilot2.0: Currently work in progress - 
+A chat agent built in the form of an IsaacSim extension that takes in language commands and runs a robot program on the simulator. The language commands are first mapped to objects in the scene based on their assigned names in the simulation. Then, background methods such as pick, place and move provided by the IsaacSim API are  wrapped in RoboCopilotAPIs that are ingestible by LLMs. These wrappers are then converted to a workflow based on RoboCopilot APIs and executed in the correct order in IsaacSim.
+
+This approach is "spatially-aware" as the pose of the objects specified in the language instruction can be queried from the simulation scene.
+
+This is a simulation based digital twin robot-programmer and can be extended to the real robot if there is minimal sim2real gap. This can double as a dataset generator and used for model fine-tuning with VLA models such as Gr00t-N1 and pi0.
+
+The architecture diagram for this approach is shown below:
+![robocopilot2.0](images/RoboCopilot2.0.jpg "Title")
 <!-- Embed video using HTML -->
 <video width="600" controls>
   <source src="langflow/hack-agents-final.mp4" type="video/mp4">
@@ -38,4 +46,4 @@ Future work:
 
 1) This can be further improved by imparting knowledge of physical properties like gravity and friction.
 
-2) We could finetune the model to recognize PyBullet Environments in a suitable embedding that's understood by the LLM.
+2) We could finetune the model to recognize IsaacSim and PyBullet Environments in a suitable embedding that's understood by the LLM.
